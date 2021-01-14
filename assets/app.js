@@ -50,3 +50,4 @@ closeBtn.addEventListener("click", () =>{
     let modalChildren = modal.children;
     console.log(modalChildren)                -------------> cerrar modal clickando fuera
 })*/
+
