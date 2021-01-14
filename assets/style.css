@@ -1,5 +1,5 @@
 * {
-    
+    border: 1px solid black;
 }
 
 body {
@@ -62,12 +62,16 @@ img {
 
     border: 2px ridge gray;
     border-radius: 5px;
-
-    visibility: hidden;
+    display: none;
 }
 
 .modal--post-buttons{
     display: flex;
     justify-content: space-evenly;
     margin: 20px;
+}
+#close-modal {
+    position: absolute;
+    right: 10px;
+    top: 5px;
 }

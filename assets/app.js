@@ -1,15 +1,15 @@
 //-------------button functionalities----------------------//
 let imgs = document.querySelectorAll("img");
-console.log(imgs)
+
 imgs.forEach((img)=> {
     if(img.classList.contains("edit")){
-        img.addEventListener("click", editPost())
+        img.addEventListener("click", editPost)
     }
     if(img.classList.contains("close")){
-        img.addEventListener("click", closePost())
+        img.addEventListener("click", closePost)
     }
     if(img.classList.contains("delete")){
-        img.addEventListener("click", deletePost())
+        img.addEventListener("click", deletePost)
     }
 })
 
@@ -29,11 +29,24 @@ let posts = document.querySelectorAll(".post")
 let modal = document.getElementById("modal")
 
 posts.forEach((p) => {
-    console.log(p)
-    p.addEventListener("click", renderModal(p))
+    p.addEventListener("click", renderModal)
 })
 
-function renderModal(post){
-    modal.style.visibility = "hidden"
-    console.log("Hi, I'm changing visibility")
+function renderModal(){
+    modal.style.display = "block"
 }
+
+
+//----------------closing modal--------------------------------//
+
+let closeBtn = document.getElementById("close-modal")
+
+closeBtn.addEventListener("click", () =>{
+    modal.style.display = "none";
+})
+
+/*document.addEventListener("click", (e) =>{
+    console.log(e.target)
+    let modalChildren = modal.children;
+    console.log(modalChildren)                -------------> cerrar modal clickando fuera
+})*/
