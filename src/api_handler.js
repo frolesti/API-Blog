@@ -37,7 +37,7 @@ function getCommentsApi() {
     }).then(
         function success(json, statusText, jqXHR) {
             json.forEach(comment => {
-                console.log('comment', comment);
+                //console.log('comment', comment);
             });
             console.log('statusText success', statusText);
         },

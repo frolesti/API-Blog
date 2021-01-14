@@ -1,5 +1,5 @@
 * {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 body {
@@ -73,4 +73,15 @@ img {
     position: absolute;
     right: 10px;
     top: 5px;
+}
+
+/*---------------comments div-----------------------*/
+.modal--post-comments{
+
+}
+#load-comments {
+    color: white;
+    background: black;
+    padding: 5px;
+    width: fit-content;
 }
