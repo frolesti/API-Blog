@@ -1,28 +1,50 @@
 
 function getPostApi() {
-    return axios.get("https://jsonplaceholder.typicode.com/posts")
-    .then((json) => {
-        json.data.forEach(post => {
-        });
-    })
+    return $.ajax("https://jsonplaceholder.typicode.com/posts", {
+        method: 'GET'
+    }).then(
+        function success(json, statusText, jqXHR) {
+            json.forEach(post => {
+                // console.log('post', post);
+            });
+            console.log('statusText success', statusText);
+        },
+        function failed(jqXHR, errorStatus, errorMessage) {
+            console.log(errorMessage);
+        }
+    )
 }
 
 function getUserApi() {
-    return axios.get("https://jsonplaceholder.typicode.com/users")
-    .then((json) => {
-        json.data.forEach(user => {
-
-        });
-    })
+    return $.ajax("https://jsonplaceholder.typicode.com/users", {
+    method: 'GET'
+    }).then(
+        function success(json, statusText, jqXHR) {
+            json.forEach(user => {
+                // console.log('user', user);
+            });
+            console.log('statusText success', statusText);
+        },
+        function failed(jqXHR, errorStatus, errorMessage) {
+            console.log(errorMessage);
+        }
+    )
 }
 
 function getCommentsApi() {
-    return axios.get("https://jsonplaceholder.typicode.com/comments")
-    .then((json) => {
-        json.data.forEach(comment => {
-
-        });
-    })
+    return $.ajax("https://jsonplaceholder.typicode.com/comments", {
+    method: 'GET'
+    }).then(
+        function success(json, statusText, jqXHR) {
+            json.forEach(comment => {
+                console.log('comment', comment);
+            });
+            console.log('statusText success', statusText);
+        },
+        function failed(jqXHR, errorStatus, errorMessage) {
+            console.log(errorMessage);
+        }
+    )
 }
 
 getPostApi()
