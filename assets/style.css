@@ -1,5 +1,73 @@
 * {
-    margin: 10px;
+    
+}
+
+body {
+    padding: auto;
+    margin: auto;
+}
+
+header {
     padding: 10px;
-    text-align: center;
+    height: 40px;
+    width: 100%;
+    text-align: left;
+    align-content: center;
+    top: 0;
+}
+
+main {
+    margin: auto;
+    padding: 10px;
+}
+
+img {
+    margin: 8px;
+    width: 15px;
+    height: 15px;
+}
+/*-----------post styling--------------------------*/
+
+.post {
+    padding: 10px 100px;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px ridge gray;
+    border-radius: 5px;
+}
+
+.post-info {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/*----------modal styling-------------------------*/
+.modal {
+    width: 500px;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    position: absolute;
+    left: 33%;
+    top: 33%;
+
+    border: 2px ridge gray;
+    border-radius: 5px;
+
+    visibility: hidden;
+}
+
+.modal--post-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
 }
