@@ -8,6 +8,7 @@
 body {
     padding: auto;
     margin: auto;
+    font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -19,20 +20,18 @@ h1{
     font-size: 50px;
     text-align: center;
     margin: 0;
-    z-index: 1;
     position: relative;
     padding-top: 50px;
 }
 .site-description {
     font-style: italic;
-    font-family: 'Open Sans', sans-serif;
     background-color: yellow;
     display: table;
     padding: 2px 4px;
     margin: 0 auto;
     margin-top: -8px;
     letter-spacing: 5px;
-    z-index: 0;
+    z-index: -1;
     position: relative;
 }
 h2 a, h2 a:link {

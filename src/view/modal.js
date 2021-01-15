@@ -1,9 +1,11 @@
-function templateModal(post) {
-    const template = 
-        `<div id="modal" class="modal">
+
+export const postModalComponent = {
+    name: 'postModal',
+    template: ({ title, body }) => {
+    `<div id="modal" class="modal">
         <img src="assets/media/x-mark.svg" alt="close button" id="close-modal">
-        <div class="modal--post-title">${post.title}</div>
-        <div class="modal--post-body">${post.body}</div>
+        <h3 class="modal--post-title">${title}</h3>
+        <p class="modal--post-body">${body}</p>
         <div class="modal--post-user">
             User
             <div class="user-info">
@@ -19,23 +21,42 @@ function templateModal(post) {
             <img class="edit" src="assets/media/editar.svg" alt="edit button">
             <img class="delete" src="assets/media/delete.svg" alt="delete button">
         </div>
-    </div>`
-    return template
+    </div>`}
+    ,
+    getChildren: function () {
+        return {
+            $buttonCloseModal: document.querySelector('.close'),
+            $backgroundModal: document.querySelector('.modal-item'),
+        }
+    },
+    listeners: function (action) {
+        // action = [add, remove]
+
+        const actionEventListener = action === 'remove'
+            ? 'removeEventListener'
+            : 'addEventListener'
+
+        const {
+            $buttonCloseModal,
+            $backgroundModal,
+        } = this.getChildren()
+
+        $buttonCloseModal[actionEventListener]('click', event => {
+            event.stopPropagation()
+            document.querySelector('.modal-item').remove()
+        })
+
+        $backgroundModal[actionEventListener]('click', () => {
+            document.querySelector('.modal-item').remove()
+        })
+    },
+    render: function ($container, pin) {
+        renderModal($container, this.template, pin)
+        this.listeners('add')
+    },
 }
 
-export function renderModal(post) {
-    $('.main-wrapper').append(templateModal(post))
-    $('.modal').css('display', 'block')
+export function renderModal($container, template, post) {
+    const html = template(post)
+    $container.append(html)
 }
-
-let closeBtn = document.getElementById("close-modal")
-
-closeBtn.addEventListener("click", () =>{
-    modal.style.display = "none";
-})
-
-/*document.addEventListener("click", (e) =>{
-    console.log(e.target)
-    let modalChildren = modal.children;
-    console.log(modalChildren)                -------------> cerrar modal clickando fuera
-})*/

@@ -1,4 +1,4 @@
-import { renderModal } from "./modal.js"
+import { postModalComponent } from "./modal.js"
 
 export const postComponent = {
     name: 'post',
@@ -10,7 +10,9 @@ export const postComponent = {
     },
     listeners: function ($thisElement, post) {
 
-        $('.post-title').on('click', renderModal)
+        $('.post-title').on('click', () => {
+            postModalComponent.render($thisElement, post)
+        })
     },
     render: function ($postContainer, post) {
         const $thisElement = renderTemplatePost($postContainer, this.template, post)
