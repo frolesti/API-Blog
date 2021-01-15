@@ -1,0 +1,23 @@
+.modal {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    position: absolute;
+    top: 33%;
+
+    border: 2px ridge gray;
+    border-radius: 5px;
+    display: none;
+}
+
+.modal--post-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+#close-modal {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
