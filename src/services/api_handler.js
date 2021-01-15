@@ -1,12 +1,12 @@
-import { postListView } from "../view/listPost.js";
+import { postListView } from "../view/listPost.js"
 
-export function getPostApi() {
+export function getPostApi($container) {
     return $.ajax("https://jsonplaceholder.typicode.com/posts", {
         method: 'GET'
     }).then(
         function success(json, statusText, jqXHR) {
             json.forEach((post) => {
-                postListView(post)
+                postListView($container, post)
             })
             // console.log('statusText success', statusText);
         },

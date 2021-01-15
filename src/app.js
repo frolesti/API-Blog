@@ -1,6 +1,7 @@
 import { getPostApi } from "./services/api_handler.js";
 
-getPostApi()
+const $container = $('.main-wrapper')
+getPostApi($container)
 
 //-------------button functionalities----------------------//
 let imgs = document.querySelectorAll("img");
@@ -26,20 +27,6 @@ function closePost(){
 function deletePost(){
     console.log("Deleting post")
 }
-
-//------------------modal rendering-------------------------//
-
-let posts = document.querySelectorAll(".post")
-let modal = document.getElementById("modal")
-
-posts.forEach((p) => {
-    p.addEventListener("click", renderModal)
-})
-
-function renderModal(){
-    modal.style.display = "block"
-}
-
 
 //-----------------showing comments---------------------------//
 
@@ -89,6 +76,8 @@ let closeBtn = document.getElementById("close-modal")
 closeBtn.addEventListener("click", () =>{
     modal.style.display = "none";
 })
+
+
 
 /*document.addEventListener("click", (e) =>{
     console.log(e.target)
