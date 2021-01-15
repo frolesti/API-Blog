@@ -1,10 +1,10 @@
 .wrapper-list {
     padding-bottom: 10px;
-    border-bottom: 0.8px solid black;
-
     width: 100%;
+}
+.wrapper-post {
     display: flex;
-    flex-flow: row nowrap;
+    border-bottom: 0.8px solid black;
 }
 .post-info {
     width: 80%;

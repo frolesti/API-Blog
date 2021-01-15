@@ -5,9 +5,9 @@ export function getPostApi($container) {
         method: 'GET'
     }).then(
         function success(json, statusText, jqXHR) {
-            json.forEach((post) => {
-                postListView($container, post)
-            })
+            // json.forEach((post) => {
+                postListView($container, json)
+            // })
             // console.log('statusText success', statusText);
         },
         function failed(jqXHR, errorStatus, errorMessage) {
