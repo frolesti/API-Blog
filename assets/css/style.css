@@ -63,3 +63,19 @@ img {
     width: 15px;
     height: 15px;
 }
+#close-modal {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+/*---------------comments div-----------------------*/
+.modal--post-comments{
+
+}
+#load-comments {
+    color: white;
+    background: black;
+    padding: 5px;
+    width: fit-content;
+}
