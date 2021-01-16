@@ -1,22 +1,23 @@
+import { postListView } from "../view/listPost.js"
 
-function getPostApi() {
+export function getPostApi($container) {
     return $.ajax("https://jsonplaceholder.typicode.com/posts", {
         method: 'GET'
     }).then(
         function success(json, statusText, jqXHR) {
-            json.forEach(post => {
-                // console.log('post', post);
-            });
-            console.log('statusText success', statusText);
+            // json.forEach((post) => {
+                postListView($container, json)
+            // })
+            // console.log('statusText success', statusText);
         },
         function failed(jqXHR, errorStatus, errorMessage) {
-            console.log(errorMessage);
+            // console.log(errorMessage);
         }
     )
 }
 
-function getUserApi() {
-    return $.ajax("https://jsonplaceholder.typicode.com/users", {
+export function getUserApi(userId) {
+    return $.ajax(`https://jsonplaceholder.typicode.com/users/${userId}`, {
     method: 'GET'
     }).then(
         function success(json, statusText, jqXHR) {
@@ -31,13 +32,13 @@ function getUserApi() {
     )
 }
 
-function getCommentsApi() {
-    return $.ajax("https://jsonplaceholder.typicode.com/comments", {
+export function getCommentsApi(userId) {
+    return $.ajax(`https://jsonplaceholder.typicode.com/comments/$users${userId}`, {
     method: 'GET'
     }).then(
         function success(json, statusText, jqXHR) {
             json.forEach(comment => {
-                //console.log('comment', comment);
+                // console.log('comment', comment);
             });
             console.log('statusText success', statusText);
         },
@@ -46,7 +47,3 @@ function getCommentsApi() {
         }
     )
 }
-
-getPostApi()
-getUserApi()
-getCommentsApi()

@@ -4,52 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script
-  src="https://code.jquery.com/jquery-3.5.1.js"
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
     <title>Blog with API</title>
+    
 </head>
 <body>
     <header>
-        My Blog
+        <h1>MyBlog</h1>
+        <p class="site-description">welcome to my world</p>
     </header>
-    <main>
-        <div class="post">
-            <div class="post-info">
-                <div class="post-title">Post title</div>
-                <div class="post-body">Post body</div>
-            </div>
-            <div class="post-buttons">
-                <img class="edit" src="assets/media/editar.svg" alt="edit button">
-                <img class="delete" src="assets/media/delete.svg" alt="delete button">
-            </div>
-        </div>
-        <div id="modal" class="modal">
-            <img src="assets/media/x-mark.svg" alt="close button" id="close-modal">
-            <div class="modal--post-title">Post Title</div>
-            <div class="modal--post-body">Post body</div>
-            <div class="modal--post-user">
-                User
-                <div class="user-info">
-                    <p>username</p>
-                    <p>user@mail.com</p>
-                </div>
-            </div>
-            <div class="modal--post-comments">
-                <h4>Comments</h4>
-                <button id="load-comments">Load Comments</button></div>
-            
-            <div class="modal--post-buttons">
-                <img class="edit" src="assets/media/editar.svg" alt="edit button">
-                <img class="delete" src="assets/media/delete.svg" alt="delete button">
-            </div>
-        </div>
+    <main class="main-wrapper">
     </main>
     <footer></footer>
-    <script src="src/api_handler.js"></script>
-    <script src="src/app.js"></script>
+    <script type="module" src="src/app.js"></script>
 </body>
 </html>

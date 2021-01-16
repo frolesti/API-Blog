@@ -1,73 +1,67 @@
-* {
-    /*border: 1px solid black;*/
-}
+@import './post.css';
+@import './modal.css';
 
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300i');
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100,300');
 body {
     padding: auto;
     margin: auto;
+    font-family: 'Open Sans', sans-serif;
 }
 
 header {
-    padding: 10px;
-    height: 40px;
     width: 100%;
-    text-align: left;
-    align-content: center;
-    top: 0;
+    margin-bottom: 20px;
 }
-
-main {
-    margin: auto;
-    padding: 10px;
+h1{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    padding-top: 50px;
 }
+.site-description {
+    font-style: italic;
+    background-color: yellow;
+    display: table;
+    padding: 2px 4px;
+    margin: 0 auto;
+    margin-top: -8px;
+    letter-spacing: 5px;
+    z-index: -1;
+    position: relative;
+}
+h2 a, h2 a:link {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    background-position-y: -0%;
+    background-image: linear-gradient( white 50%, yellow 50%);
+    transition: background 500ms ease;
+    background-size: 2px;
+    background-size: auto 175%;
+    cursor: pointer;
 
+}
+h2 a:hover {
+    background-position-y: 100%;
+}
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+.main-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 10px 10%;
+}
 img {
     margin: 8px;
     width: 15px;
     height: 15px;
-}
-/*-----------post styling--------------------------*/
-
-.post {
-    padding: 10px 100px;
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 2px ridge gray;
-    border-radius: 5px;
-}
-
-.post-info {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-}
-
-.post-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-/*----------modal styling-------------------------*/
-.modal {
-    width: 500px;
-    height: auto;
-    margin: 0 auto;
-    padding: 20px;
-    position: absolute;
-    top: 33%;
-
-    border: 2px ridge gray;
-    border-radius: 5px;
-    display: none;
-}
-
-.modal--post-buttons{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 20px;
 }
 #close-modal {
     position: absolute;
@@ -76,9 +70,7 @@ img {
 }
 
 /*---------------comments div-----------------------*/
-.modal--post-comments{
 
-}
 #load-comments {
     color: white;
     background: black;
