@@ -1,6 +1,7 @@
 import { getPostApi } from "./services/api_handler.js";
 
-const $container = $('.main-wrapper')
+export const $container = $('.main-wrapper')
+
 getPostApi($container)
 
 //-------------button functionalities----------------------//

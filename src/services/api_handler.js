@@ -16,8 +16,8 @@ export function getPostApi($container) {
     )
 }
 
-export function getUserApi() {
-    return $.ajax("https://jsonplaceholder.typicode.com/users", {
+export function getUserApi(userId) {
+    return $.ajax(`https://jsonplaceholder.typicode.com/users/${userId}`, {
     method: 'GET'
     }).then(
         function success(json, statusText, jqXHR) {
@@ -32,8 +32,8 @@ export function getUserApi() {
     )
 }
 
-export function getCommentsApi() {
-    return $.ajax("https://jsonplaceholder.typicode.com/comments", {
+export function getCommentsApi(userId) {
+    return $.ajax(`https://jsonplaceholder.typicode.com/comments/$users${userId}`, {
     method: 'GET'
     }).then(
         function success(json, statusText, jqXHR) {

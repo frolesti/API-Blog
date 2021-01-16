@@ -43,6 +43,7 @@ h2 a, h2 a:link {
     transition: background 500ms ease;
     background-size: 2px;
     background-size: auto 175%;
+    cursor: pointer;
 
 }
 h2 a:hover {

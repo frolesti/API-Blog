@@ -1,22 +1,23 @@
+
 import { postModalComponent } from "./modal.js"
 
 export const postComponent = {
     name: 'post',
     template: ({title, body, id}) => {
         const $postCont = $('<div class="post-list"></div>');
-        $postCont.append(`<h2 class="post-title"><a>${title}</a></h2>`);
+        $postCont.append(`<h2 class="post-title" data-Id="${id}"><a>${title}</a></h2>`);
         $postCont.append(`<p class="post-body">${body}</p>`);
         return $postCont
     },
-    listeners: function ($thisElement, post) {
+    listeners: function ($container, post) {
 
         $('.post-title').on('click', () => {
-            postModalComponent.render($thisElement, post)
+            postModalComponent.render($container, post)
         })
     },
     render: function ($postContainer, post) {
         const $thisElement = renderTemplatePost($postContainer, this.template, post)
-        this.listeners($thisElement, post)
+        this.listeners($postContainer, post)
         return $thisElement
     },
 }
