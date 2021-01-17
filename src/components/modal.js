@@ -1,5 +1,3 @@
-import { $container } from "../app.js";
-
 export const postModalComponent = {
     name: 'postModal',
     template: (post) => {

@@ -1,8 +1,8 @@
 
 import { postModalComponent } from "./modal.js"
 
-export const postComponent = {
-    name: 'post',
+export const postDetailComponent = {
+    name: 'postDetail',
     template: ({title, body, id}) => {
         const $postCont = $('<div class="post-list"></div>');
         $postCont.append(`<h2 class="post-title" data-Id="${id}"><a>${title}</a></h2>`);
