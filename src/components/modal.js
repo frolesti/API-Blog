@@ -4,7 +4,7 @@ import commentsService from '../services/comments.js'
 export const postModalComponent = {
     name: 'postModal',
     template: (post, user, comments) => (
-        `<div class="modal-item">
+        `<div>
             <div id="modal" class="modal-item-post">
                 <img src="assets/media/x-mark.svg" alt="close button" id="close-modal">
                 <h3 class="modal--post-title">${post.title}</h3>
@@ -19,6 +19,8 @@ export const postModalComponent = {
                     <img class="delete" src="assets/media/delete.svg" alt="delete button">
                 </div>
             </div>
+            <div class="modal-item-background">
+            </div>
         </div>`
     ),
     render: async function ($container, post) {
@@ -32,14 +34,19 @@ export const postModalComponent = {
 
         const $commentsList = $modal.find('.modal--post-comments')
         const $closeButton = $modal.find('#close-modal')
+        const $closeBackground = $modal.find('.modal-item-background')
 
-        comments.forEach(comment => {
-            // TODO: Create new component Comment
-            const $comment = $(`<div>${JSON.stringify(comment)}</div>`)
-            $commentsList.append($comment)
-        })
+        // comments.forEach(comment => {
+        //     // TODO: Create new component Comment
+        //     const $comment = $(`<div>${JSON.stringify(comment)}</div>`)
+        //     $commentsList.append($comment)
+        // })
 
         $closeButton.on('click', () => {
+            $modal.remove()
+        })
+        $closeBackground.on('click', () => {
+            console.log('hi!');
             $modal.remove()
         })
 
