@@ -4,8 +4,10 @@ import postsService from '../services/posts.js'
 
 export const postListComponent = {
     name: 'postList',
-    render: async ($container) => {
-        const posts = await postsService.list()
+    render: async ($container, page) => {
+        console.log(page);
+
+        const posts = await postsService.list(page)
 
         const $wrapperList = $('<section class="wrapper-list"></section>')
         $container.append($wrapperList)
