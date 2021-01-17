@@ -1,6 +1,6 @@
 import { postListComponent } from './components/postList.js'
 
-const $container = $('.main-wrapper')
-postListComponent.render($container)
-
-export default {}
+(async () => {
+    const $container = $('.main-wrapper')
+    await postListComponent.render($container)
+})()

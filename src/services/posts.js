@@ -1,7 +1,8 @@
-import { API_BASE_URL } from './config.js'
+import { API_BASE_URL, LIST_LIMIT } from './config.js'
 
-function list() {
-    return $.ajax(`${API_BASE_URL}/posts`, {
+function list(page = 0, limit = LIST_LIMIT) {
+    const start = page * limit
+    return $.ajax(`${API_BASE_URL}/posts?_start=${start}&_limit=${limit}`, {
         method: 'GET',
     })
 }
